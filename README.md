@@ -29,7 +29,7 @@ git remote add origin {your repository url}
 
 *   每个题目的功能代码均在main.js中实现，在spec-main.js中编写测试用例，参考example文件夹以及practice_v01
 
-*   在浏览器里打开每个练习文件夹下的Spec-Runner.html，就可以执行spec-main.js中的测试
+*   在浏览器里打开每个练习文件夹下的SpecRunner.html，就可以执行spec-main.js中的测试
 
 *   除main.js和spec-main.js外的其他文件都不需要关心，这些文件并非我们的学习要点
 
