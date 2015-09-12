@@ -36,6 +36,13 @@ git remote add origin {your repository url}
 *   准备好github账号，每次修改都需要使用git提交至github
 
 
+##注意事项
+
+*   语言不限，C++、Java、C#、Python等均可
+
+*   每次尽量复用前一次的代码   
+
+
 ##  参考(有重复)
 
 [Introduction to Object Oriented JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript)
