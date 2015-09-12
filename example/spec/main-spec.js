@@ -8,8 +8,8 @@ describe('Math function test', function () {
 
     it('function mul should return the sum of a,b', function () {
 
-        var sum = mul(3, 4);
-        expect(sum).toBe(12);
+        var prod = mul(3, 4);
+        expect(prod).toBe(12);
     });
 
 });
