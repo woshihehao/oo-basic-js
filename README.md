@@ -3,6 +3,25 @@
 ##环境准备
 
 * WebStorm
+* Git
+
+##操作
+
+*   先将代码clone到本地:
+
+```bash
+git clone https://github.com/geekmooc/oo-basic-js.git
+```
+
+*   导入到WebStorm中
+
+*   修改远程仓库地址
+
+```bash
+git remote rm origin
+git remote add origin {your repository url}
+```
+
 
 ##介绍
 
