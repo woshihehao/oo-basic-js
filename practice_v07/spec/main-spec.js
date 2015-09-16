@@ -1,13 +1,23 @@
 //  Your test here
 
-describe('tests of practice 01', function () {
+describe('tests of practice 07', function () {
 
-    it("given Persion with age=21 and name is Tom, get introduce", function () {
+    it("given Student with age=21 ,class=2 and name is Tom, get introduce", function () {
 
-        var person = new Person(21, "Tom");
-        var intro = person.introduce();
+        var student = new Student(21, "Tom",2);
+        var teacher = new Teacher(21, "Tom",2);
+        var intro = teacher.introduceWith(student);
 
-        expect(intro).toBe("My name is Tom. I am 21 years old.");
+        expect(intro).toBe("My name is Tom. I am 21 years old. I am a Teacher. I teach Tom.");
     })
 
+
+    it("given Student with age=21 ,class=3 and name is Tom, get introduce", function () {
+
+        var student = new Student(21, "Tom",3);
+        var teacher = new Teacher(21, "Tom",2);
+        var intro = teacher.introduceWith(student);
+
+        expect(intro).toBe("My name is Tom. I am 21 years old. I am a Teacher. I don't teach Tom.");
+    })
 });
