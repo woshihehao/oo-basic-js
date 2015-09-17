@@ -1,13 +1,23 @@
 //  Your test here
 
-describe('tests of practice 01', function () {
+it("given Student with age=18 and name is Tom, get introduce (about class)", function() {
 
-    it("given Persion with age=21 and name is Tom, get introduce", function () {
+    var my_class = new Class(3);
+    var student = new Student(18, "Tom", my_class);
+    my_class.appendMember(student);
+    var intro = student.introduce();
 
-        var person = new Person(21, "Tom");
-        var intro = person.introduce();
+    expect(intro).toBe("My name is Tom. I am 18 years old. I am a Student. I am at Class 3.");
 
-        expect(intro).toBe("My name is Tom. I am 21 years old.");
-    })
+    my_class.assginLeader(student);
+    var intro = student.introduce();
 
-});
+    expect(intro).toBe("My name is Tom. I am 18 years old. I am a Student. I am Leader of Class 3.");
+
+    var your_class = new Class(2);
+    var new_student = new Student(18, "hehao", your_class);
+    my_class.assginLeader(new_student);
+    var intro = new_student.introduce();
+
+    expect(intro).toBe("My name is hehao. I am 18 years old. I am a Student. I am at Class 2.");
+})
