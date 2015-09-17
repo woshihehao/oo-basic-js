@@ -8,23 +8,38 @@ function inherits(Child,Parent){
 var Person = function (age,name){
     this.age = age;
     this.name = name ;
-    this.basic_introduce = function(){
 
-        return 'My name is ' +this.name+ '. I am ' +this.age+ ' years old.';
+};
+Person.prototype.basic_introduce = function(){
+
+    return 'My name is ' +this.name+ '. I am ' +this.age+ ' years old.';
+};
+
+var Class = function(number){
+    this.className = number;
+    this.assginLeader= function(student){
+        this.leader = student;
     };
 };
 
-var Student = function(age,name,className){
+var Student = function(age,name,my_class){
     Person.call(this,age,name);
-    this.className = className;
+    this._class = my_class;//属性是一个类,my_class为啥就不对？
 };
 inherits(Student,Person);
 
-Student.prototype.introduce =function(){
-    var r= this.basic_introduce();
-    r+=' I am a Student. I am at Class '+this.className+'.';
-    return  r;
+
+
+Student.prototype.introduce = function() {
+    var intro = Person.prototype.basic_introduce.call(this) + " I am a Student.";
+    if (this._class.leader == this)
+        intro += " I am Leader of Class " + this._class.className + ".";
+    else
+        intro += " I am at Class " + this._class.className + ".";
+    return intro
 };
+
+
 function Worker(age,name) {
     Person.call(this, age, name);
 
@@ -55,3 +70,16 @@ Teacher.prototype.introduce=function() {
         return r;
     }
 };
+
+Teacher.prototype.introduceWith=function(Student){
+    var r = this.basic_introduce();
+    if(Student.className == this.className){
+        r += " I am a Teacher. I teach "+Student.name+".";
+        return r;
+    }
+    else{
+        r += " I am a Teacher. I don't teach " +Student.name+ ".";
+        return r;
+    }
+};
+

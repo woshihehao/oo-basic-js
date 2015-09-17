@@ -14,9 +14,15 @@ var Person = function (age,name){
     };
 };
 
-var Student = function(age,name,className){
-    Person.call(this,age,name);
+var Class = function(className){
     this.className = className;
+};
+
+
+
+var Student = function(age,name,Class){
+    Person.call(this,age,name);
+    this.className = Class.className;
 };
 inherits(Student,Person);
 
